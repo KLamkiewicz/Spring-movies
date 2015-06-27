@@ -1,0 +1,4 @@
+pl\krzysiek\service\MovieService.class
+pl\krzysiek\dao\MoviesDAO.class
+pl\krzysiek\controller\HomeController.class
+pl\krzysiek\dao\MoviesDAOImpl.class
