@@ -9,7 +9,9 @@ import pl.krzysiek.model.Genre;
 import pl.krzysiek.model.Movie;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
@@ -40,11 +42,19 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
 
     @Override
     public Movie getMovieById(int id) {
-        return null;
+        String sqlMovieInfo = "SELECT m.original_title, m.vote_average FROM movie m where m.id = ?";
+
+        Movie movie = (Movie) getJdbcTemplate().queryForObject(sqlMovieInfo, new Object[]{id}, new MovieRowMapper());
+
+        return movie;
     }
 
     @Override
     public List<Genre> getMovieGenre(int id) {
-        return null;
+        String sqlMovieGenre = "select g.name from genre g JOIN movie_genre mg ON g.id=mg.genre_id WHERE mg.movie_id = :id";
+        List<Genre> genres = getJdbcTemplate().query(sqlMovieGenre, new BeanPropertyRowMapper(Genre.class));
+
+        return genres;
     }
+
 }
