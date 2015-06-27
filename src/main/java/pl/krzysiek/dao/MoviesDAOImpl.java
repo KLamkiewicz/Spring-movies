@@ -39,6 +39,7 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
 
     @Override
     public List<Movie> searchMovies() {
+        //SELECT m.* from movie m JOIN movie_genre mg ON m.id=mg.movie_id JOIN genre g ON g.id=mg.genre_id WHERE g.name='Action' AND m.vote_average>7
         return null;
     }
 
