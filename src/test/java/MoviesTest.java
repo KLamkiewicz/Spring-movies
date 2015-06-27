@@ -36,7 +36,7 @@ public class MoviesTest {
     @Test
     public void getMovie(){
         Movie movie = moviesDAO.getMovieById(10138);
-        assertEquals("Iron Man 2", movie.getRelease_date());
+        assertEquals("Iron Man 2", movie.getTitle());
     }
 
 

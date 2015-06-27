@@ -1,8 +1,5 @@
 package pl.krzysiek.model;
 
-/**
- * Created by Admin on 2015-06-27.
- */
 public class Movie {
     private int id;
     private String release_date;

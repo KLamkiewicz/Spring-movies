@@ -42,7 +42,7 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
 
     @Override
     public Movie getMovieById(int id) {
-        String sqlMovieInfo = "SELECT m.original_title, m.vote_average FROM movie m where m.id = ?";
+        String sqlMovieInfo = "SELECT m.id, m.title, m.release_date, m.vote_average FROM movie m where m.id = ?";
 
         Movie movie = (Movie) getJdbcTemplate().queryForObject(sqlMovieInfo, new Object[]{id}, new MovieRowMapper());
 
