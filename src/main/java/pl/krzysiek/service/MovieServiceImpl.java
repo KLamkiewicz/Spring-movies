@@ -1,19 +1,35 @@
 package pl.krzysiek.service;
 
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import pl.krzysiek.dao.MoviesDAO;
 import pl.krzysiek.model.Genre;
+import pl.krzysiek.model.Movie;
 
 import java.util.List;
 
-/**
- * Created by Admin on 2015-06-27.
- */
+@Service
+@Transactional
 public class MovieServiceImpl implements MovieService{
 
+    @Autowired
+    MoviesDAO moviesDAO;
+
+
     @Override
-    public JSONObject getTopMovies() {
-        return null;
+    public JSONObject getTopMovies(){
+        JSONObject jsonObject = new JSONObject();
+        for(Movie m:moviesDAO.getTopMovies()){
+            JSONObject n = new JSONObject();
+            n.put("title", m.getTitle());
+            n.put("rating", m.getVote_average());
+            jsonObject.put(String.valueOf(m.getId()), n);
+        }
+        return jsonObject;
     }
+
 
     @Override
     public JSONObject getTopGenre() {
