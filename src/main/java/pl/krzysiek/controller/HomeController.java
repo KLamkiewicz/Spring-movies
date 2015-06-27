@@ -2,11 +2,12 @@ package pl.krzysiek.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import pl.krzysiek.model.Genre;
 import pl.krzysiek.service.MovieService;
+
+import java.util.List;
 
 
 @Controller
@@ -42,4 +43,20 @@ public class HomeController {
 
         return mav;
     }
+
+    @RequestMapping(value = "/search")
+    public String welcome(){
+        return "search";
+    }
+
+    @RequestMapping(value = "/searchie", method = RequestMethod.POST)
+    @ResponseBody
+    public String addFruits(@RequestParam(value="genres[]")List<String> genres) {
+        for(String g: genres){
+            System.out.println(g);
+        }
+        return "ok";
+    }
+
+
 }
