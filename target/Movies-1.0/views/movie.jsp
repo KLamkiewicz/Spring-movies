@@ -4,9 +4,10 @@
 <head>
     <title>Home</title>
     <script type="text/javascript">
-        var someValue = ${atrj};
+        var someValue = ${movie};
     </script>
-    <script src="<c:url value='/resources/javascript/test.js'/>"></script>
+    <script src="<c:url value="/resources/jquery-2.1.4.min.js"/>"></script>
+    <script src="<c:url value='/resources/javascript/movie.js'/>"></script>
 </head>
 <body>
     Test

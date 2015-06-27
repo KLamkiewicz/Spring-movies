@@ -38,7 +38,7 @@ public class HomeController {
     public ModelAndView welcome(@PathVariable Integer id){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("movie");
-        mav.addObject("atrj", movieService.getMovie(id));
+        mav.addObject("movie", movieService.getMovie(id));
 
         return mav;
     }
