@@ -25,6 +25,15 @@ public class HomeController {
         return mav;
     }
 
+    @RequestMapping(value = "/topGenre")
+    public ModelAndView topGenre(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("genre");
+        mav.addObject("atrj", movieService.getTopGenre());
+
+        return mav;
+    }
+
     @RequestMapping(value="/movie/{id}")
     @ResponseBody
     public String welcome(@PathVariable Integer id){

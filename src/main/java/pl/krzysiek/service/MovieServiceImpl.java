@@ -33,7 +33,11 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public JSONObject getTopGenre() {
-        return null;
+        JSONObject jsonObject = new JSONObject();
+        for(Genre g:moviesDAO.getTopGenre()){
+            jsonObject.put(g.getName(),g.getIle());
+        }
+        return jsonObject;
     }
 
     @Override
