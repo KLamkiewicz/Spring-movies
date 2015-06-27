@@ -14,12 +14,4 @@ public interface MoviesDAO {
     public Movie getMovieById(int id);
     public List<Genre> getMovieGenre(int id);
 
-
-//
-//    public JSONObject getTopMoviesz();
-//    public JSONObject getTopGenre();
-//    public JSONObject searchMovie();
-//    public JSONObject getMovieById(Integer id);
-
-
 }
