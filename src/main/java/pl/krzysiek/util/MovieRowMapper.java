@@ -1,4 +1,4 @@
-package pl.krzysiek.dao;
+package pl.krzysiek.util;
 
 import org.springframework.jdbc.core.RowMapper;
 import pl.krzysiek.model.Movie;

@@ -2,16 +2,15 @@ package pl.krzysiek.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 import pl.krzysiek.model.Genre;
 import pl.krzysiek.model.Movie;
+import pl.krzysiek.util.GenreRowMapper;
+import pl.krzysiek.util.MovieRowMapper;
 
 import javax.sql.DataSource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
@@ -51,8 +50,8 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
 
     @Override
     public List<Genre> getMovieGenre(int id) {
-        String sqlMovieGenre = "select g.name from genre g JOIN movie_genre mg ON g.id=mg.genre_id WHERE mg.movie_id = :id";
-        List<Genre> genres = getJdbcTemplate().query(sqlMovieGenre, new BeanPropertyRowMapper(Genre.class));
+        String sqlMovieGenre = "select g.name from genre g JOIN movie_genre mg ON g.id=mg.genre_id WHERE mg.movie_id = ?";
+        List<Genre> genres = (List<Genre>) getJdbcTemplate().query(sqlMovieGenre, new Object[]{id}, new GenreRowMapper());
 
         return genres;
     }
