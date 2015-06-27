@@ -8,6 +8,7 @@ import pl.krzysiek.dao.MoviesDAO;
 import pl.krzysiek.model.Genre;
 import pl.krzysiek.model.Movie;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Service
@@ -47,6 +48,17 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public JSONObject getMovie(int id) {
-        return null;
+        JSONObject jsonObject = new JSONObject();
+        Movie movie = moviesDAO.getMovieById(id);
+        List<Genre> genres = moviesDAO.getMovieGenre(id);
+        jsonObject.put("title", movie.getTitle());
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        jsonObject.put("average", df.format(movie.getVote_average()));
+        for(Genre g:genres){
+            jsonObject.append("genres", g.getName());
+        }
+
+        return jsonObject;
     }
 }

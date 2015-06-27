@@ -30,8 +30,11 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
     }
 
     @Override
-    public List<Genre> getTopGenre() {
-        return null;
+    public List<Genre> getTopGenre(){
+        String sql = "SELECT g.name, g.id, COUNT(mg.id) AS ile FROM genre as g JOIN movie_genre as mg ON g.id=mg.genre_id GROUP BY g.id";
+        List<Genre> rows = getJdbcTemplate().query(sql, new BeanPropertyRowMapper(Genre.class));
+
+        return rows;
     }
 
     @Override

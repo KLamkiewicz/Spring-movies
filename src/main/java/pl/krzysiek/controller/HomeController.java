@@ -35,9 +35,11 @@ public class HomeController {
     }
 
     @RequestMapping(value="/movie/{id}")
-    @ResponseBody
-    public String welcome(@PathVariable Integer id){
-        System.out.println(id);
-        return "Welcome";
+    public ModelAndView welcome(@PathVariable Integer id){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("movie");
+        mav.addObject("atrj", movieService.getMovie(id));
+
+        return mav;
     }
 }
