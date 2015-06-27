@@ -1,5 +1,7 @@
 *.class
 
+src/test/java/VarClass.java
+
 # Package Files #
 *.jar
 *.war
