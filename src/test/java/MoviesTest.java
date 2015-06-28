@@ -53,4 +53,9 @@ public class MoviesTest {
         assertEquals("Science Fiction", genres.get(2).getName());
     }
 
+    @Test
+    public void searchMovies(){
+
+    }
+
 }

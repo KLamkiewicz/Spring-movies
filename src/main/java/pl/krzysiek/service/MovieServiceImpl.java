@@ -42,7 +42,8 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public JSONObject search(List<Genre> genres, float voteAverage) {
+    public JSONObject search(List<String> genres, double movie_average) {
+
         return null;
     }
 
@@ -50,15 +51,19 @@ public class MovieServiceImpl implements MovieService{
     public JSONObject getMovie(int id) {
         JSONObject jsonObject = new JSONObject();
         Movie movie = moviesDAO.getMovieById(id);
-        List<Genre> genres = moviesDAO.getMovieGenre(id);
-        jsonObject.put("title", movie.getTitle());
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(2);
-        jsonObject.put("average", df.format(movie.getVote_average()));
-        for(Genre g:genres){
-            jsonObject.append("genres", g.getName());
-        }
+        if(movie!=null) {
+            jsonObject.put("title", movie.getTitle());
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
+            jsonObject.put("average", df.format(movie.getVote_average()));
 
+            List<Genre> genres = moviesDAO.getMovieGenre(id);
+            if(genres!=null) {
+                for (Genre g : genres) {
+                    jsonObject.append("genres", g.getName());
+                }
+            }
+        }
         return jsonObject;
     }
 }

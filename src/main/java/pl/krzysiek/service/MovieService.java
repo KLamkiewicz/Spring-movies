@@ -9,6 +9,6 @@ public interface MovieService {
 
     public JSONObject getTopMovies();
     public JSONObject getTopGenre();
-    public JSONObject search(List<Genre> genres, float voteAverage);
+    public JSONObject search(List<String> genres, double movie_averag);
     public JSONObject getMovie(int id);
 }

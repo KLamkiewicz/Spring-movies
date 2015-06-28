@@ -1,6 +1,7 @@
 package pl.krzysiek.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,7 @@ import pl.krzysiek.util.GenreRowMapper;
 import pl.krzysiek.util.MovieRowMapper;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -38,7 +40,7 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
     }
 
     @Override
-    public List<Movie> searchMovies() {
+    public List<Movie> searchMovies(List<String> genres, double movie_averag) {
         //SELECT m.* from movie m JOIN movie_genre mg ON m.id=mg.movie_id JOIN genre g ON g.id=mg.genre_id WHERE g.name='Action' AND m.vote_average>7
         return null;
     }
@@ -46,18 +48,25 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
     @Override
     public Movie getMovieById(int id) {
         String sqlMovieInfo = "SELECT m.id, m.title, m.release_date, m.vote_average FROM movie m where m.id = ?";
-
-        Movie movie = (Movie) getJdbcTemplate().queryForObject(sqlMovieInfo, new Object[]{id}, new MovieRowMapper());
-
-        return movie;
+        try {
+            Movie movie = (Movie) getJdbcTemplate().queryForObject(sqlMovieInfo, new Object[]{id}, new MovieRowMapper());
+            return movie;
+        }catch (DataAccessException ex){
+            ex.printStackTrace();
+        }
+        return null;
     }
 
     @Override
     public List<Genre> getMovieGenre(int id) {
         String sqlMovieGenre = "select g.name from genre g JOIN movie_genre mg ON g.id=mg.genre_id WHERE mg.movie_id = ?";
-        List<Genre> genres = (List<Genre>) getJdbcTemplate().query(sqlMovieGenre, new Object[]{id}, new GenreRowMapper());
-
-        return genres;
+        try {
+            List<Genre> genres = (List<Genre>) getJdbcTemplate().query(sqlMovieGenre, new Object[]{id}, new GenreRowMapper());
+            return genres;
+        }catch (DataAccessException ex){
+            ex.printStackTrace();
+        }
+        return null;
     }
 
 }
