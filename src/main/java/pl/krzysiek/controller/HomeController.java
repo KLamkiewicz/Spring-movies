@@ -1,5 +1,6 @@
 package pl.krzysiek.controller;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -49,13 +50,10 @@ public class HomeController {
         return "search";
     }
 
-    @RequestMapping(value = "/searchie", method = RequestMethod.POST)
+    @RequestMapping(value = "/searchie", method = RequestMethod.POST, produces="application/json")
     @ResponseBody
-    public String addFruits(@RequestParam(value="genres[]")List<String> genres) {
-        for(String g: genres){
-            System.out.println(g);
-        }
-        return "ok";
+    public String addFruits(@RequestParam(value="genres[]")List<String> genres, @RequestParam(value="rating") double rating) {
+        return movieService.search(genres, rating).toString();
     }
 
 

@@ -43,8 +43,14 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public JSONObject search(List<String> genres, double movie_average) {
-
-        return null;
+        JSONObject jsonObject = new JSONObject();
+        List<Movie> movies = moviesDAO.searchMovies(genres,movie_average);
+        for(Movie m:movies){
+            JSONObject n = new JSONObject();
+            n.put("title", m.getTitle());
+            jsonObject.put(String.valueOf(m.getId()), n);
+        }
+        return jsonObject;
     }
 
     @Override
