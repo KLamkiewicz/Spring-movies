@@ -31,7 +31,7 @@
                 </form>
 
                 <div class=" menuButtons">
-                    <button class="btn btn-info" id="movieButton"/> Movie </button>
+                    <button class="btn btn-info" id="movieButton"/>Get Movie </button>
                 </div>
 
                 <span class="menuButtons">

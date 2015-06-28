@@ -31,7 +31,7 @@
                 </form>
 
                 <div class=" menuButtons">
-                    <button class="btn btn-info" id="movieButton"/> Movie </button>
+                    <button class="btn btn-info" id="movieButton"/>Get Movie </button>
                 </div>
 
                 <span class="menuButtons">
@@ -43,9 +43,14 @@
     </div>
 
     <div id="content">
-
-        Welcome
-
+        <div id="showInfo"> Info is being fetched from the API </div>
+        <table class="table table-striped" id="movieTable">
+            <tr>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Plot</th>
+            </tr>
+        </table>
     </div>
 </div>
 
