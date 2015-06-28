@@ -9,6 +9,7 @@ import pl.krzysiek.model.Genre;
 import pl.krzysiek.model.Movie;
 import pl.krzysiek.service.MovieService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -55,7 +56,15 @@ public class MoviesTest {
 
     @Test
     public void searchMovies(){
+        List<String> genres = new ArrayList<String>();
+        genres.add("Adventure");
+        genres.add("Action");
+        List<Movie> movies = moviesDAO.searchMovies(genres, 7.5);
 
+        assertEquals(3,movies.size());
+        assertEquals("Inception",movies.get(0).getTitle());
+        assertEquals("The Pacific",movies.get(1).getTitle());
+        assertEquals("Sonic X: The Movie 2",movies.get(2).getTitle());
     }
 
 }

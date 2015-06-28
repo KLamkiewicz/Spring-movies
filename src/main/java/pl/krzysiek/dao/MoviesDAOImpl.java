@@ -12,7 +12,9 @@ import pl.krzysiek.util.MovieRowMapper;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
@@ -40,9 +42,25 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
     }
 
     @Override
-    public List<Movie> searchMovies(List<String> genres, double movie_averag) {
-        //SELECT m.* from movie m JOIN movie_genre mg ON m.id=mg.movie_id JOIN genre g ON g.id=mg.genre_id WHERE g.name='Action' AND m.vote_average>7
-        return null;
+    public List<Movie> searchMovies(List<String> genres, double movie_average) {
+        List<Object> args = new ArrayList<Object>();
+        String sql = "SELECT DISTINCT m.* from movie m JOIN movie_genre mg ON m.id=mg.movie_id JOIN genre g ON g.id=mg.genre_id ";
+        StringBuilder stringBuilder = new StringBuilder(sql);
+
+        for(int i=0; i<genres.size(); i++){
+            stringBuilder.append("JOIN movie_genre mg"+i+" ON m.id=mg"+i+".movie_id JOIN genre g"+i+" ON g"+i+".id=mg"+i+".genre_id ");
+        }
+        stringBuilder.append(" WHERE ");
+        int j=0;
+        for(String g:genres){
+            stringBuilder.append(" g"+j+".name=? AND ");
+            args.add(g);
+            j++;
+        }
+        stringBuilder.append("m.vote_average>?");
+        args.add(movie_average);
+
+        return getJdbcTemplate().query(stringBuilder.toString(), args.toArray(new Object[args.size()]), new BeanPropertyRowMapper(Movie.class));
     }
 
     @Override
