@@ -72,4 +72,14 @@ public class MovieServiceImpl implements MovieService{
         }
         return jsonObject;
     }
+
+    @Override
+    public JSONObject getGenres() {
+        JSONObject jsonObject = new JSONObject();
+        for(String s:moviesDAO.getGenres()){
+            jsonObject.append("genres", s);
+        }
+
+        return jsonObject;
+    }
 }

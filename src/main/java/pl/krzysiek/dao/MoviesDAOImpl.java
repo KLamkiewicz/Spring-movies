@@ -87,4 +87,12 @@ public class MoviesDAOImpl extends JdbcDaoSupport implements MoviesDAO {
         return null;
     }
 
+    @Override
+    public List<String> getGenres() {
+        String sqlMovieGenre = "select name from genre";
+        List<String> genres = (List<String>) getJdbcTemplate().queryForList(sqlMovieGenre, String.class);
+
+        return genres;
+    }
+
 }

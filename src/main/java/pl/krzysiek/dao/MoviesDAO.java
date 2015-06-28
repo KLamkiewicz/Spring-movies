@@ -13,5 +13,6 @@ public interface MoviesDAO {
     public List<Movie> searchMovies(List<String> genres, double movie_average);
     public Movie getMovieById(int id);
     public List<Genre> getMovieGenre(int id);
+    public List<String> getGenres();
 
 }

@@ -11,4 +11,5 @@ public interface MovieService {
     public JSONObject getTopGenre();
     public JSONObject search(List<String> genres, double movie_averag);
     public JSONObject getMovie(int id);
+    public JSONObject getGenres();
 }

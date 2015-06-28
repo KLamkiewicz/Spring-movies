@@ -3,6 +3,9 @@
 <html>
 <head>
     <title>Search for movies</title>
+    <script type="text/javascript">
+        var genres = ${genres};
+    </script>
     <script src="<c:url value="/resources/jquery-2.1.4.min.js"/>"></script>
     <script src="<c:url value='/resources/javascript/main.js'/>"></script>
     <script src="<c:url value='/resources/javascript/search.js'/>"></script>

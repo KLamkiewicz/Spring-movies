@@ -1,7 +1,10 @@
 var x;
 $(function() {
 
+    console.log(genres);
+
     console.log("works");
+
     $.ajax({
         url: "/searchie",
         data: {"genres" : ["Action","Adventure"], "rating":7.5},

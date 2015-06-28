@@ -46,8 +46,12 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/search")
-    public String welcome(){
-        return "search";
+    public ModelAndView welcome(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("search");
+        mav.addObject("genres", movieService.getGenres());
+
+        return mav;
     }
 
     @RequestMapping(value = "/searchie", method = RequestMethod.POST, produces="application/json")
