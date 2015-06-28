@@ -49,8 +49,8 @@
 
         <div class="checkbox" id="movieGenresRadio">
         </div>
-        <span width="50">
-            <input type="number" class="form-control" placeholder="Enter movie id" id="movieRating" >
+        <span>
+            <input type="number" class="form-control" placeholder="Enter movie id" id="movieRating" style="width: 150px;" >
         </span>
 
 

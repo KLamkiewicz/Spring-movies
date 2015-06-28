@@ -15,9 +15,9 @@ $(function() {
     var searchForMovies = function(){
         var send = false;
         if($("#movieRating").val().length<1){
-            $("#movieButtonForm").css("borderColor", "red");
+            $("#movieRating").css("borderColor", "red");
         }else if($("#movieRating").val().length>0){
-            $("#movieButtonForm").css("borderColor", "black");
+            $("#movieRating").css("borderColor", "black");
             ratingToSend = $("#movieRating").val();
             send = true;
         }
