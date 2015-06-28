@@ -42,6 +42,7 @@ public class MoviesTest {
     public void getMovie(){
         Movie movie = moviesDAO.getMovieById(10138);
         assertEquals("Iron Man 2", movie.getTitle());
+        //System.out.println(movie);
     }
 
     @Test

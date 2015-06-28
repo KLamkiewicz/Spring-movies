@@ -22,7 +22,7 @@ public class HomeController {
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home");
-        mav.addObject("atrj", movieService.getTopMovies());
+        mav.addObject("movies", movieService.getTopMovies());
 
         return mav;
     }
@@ -31,7 +31,7 @@ public class HomeController {
     public ModelAndView topGenre(){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("genre");
-        mav.addObject("atrj", movieService.getTopGenre());
+        mav.addObject("genres", movieService.getTopGenre());
 
         return mav;
     }
