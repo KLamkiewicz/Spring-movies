@@ -43,10 +43,24 @@
         </nav>
     </div>
 
-    <div id="content">
+    <div id="content" style="margin-left: 50px;">
+
+        Welcome
+
+        <div class="checkbox" id="movieGenresRadio">
+        </div>
+        <span width="50">
+            <input type="number" class="form-control" placeholder="Enter movie id" id="movieRating" >
+        </span>
 
 
+        <div>
+                <button class="btn btn-info" id="findMoviesButton"/>Find movies </button>
+        </div>
 
+        <div id="foundMovies">
+
+        </div>
     </div>
 </div>
 
