@@ -7,6 +7,7 @@
         var genres = ${genres};
     </script>
     <script src="<c:url value="/resources/jquery-2.1.4.min.js"/>"></script>
+    <script src="<c:url value="/resources/chart.min.js"/>"></script>
     <script src="<c:url value='/resources/javascript/main.js'/>"></script>
     <script src="<c:url value='/resources/javascript/genre.js'/>"></script>
     <link rel="stylesheet" href="<c:url value='/resources/style/bootstrap.min.css'/>" type="text/css" />
@@ -43,9 +44,10 @@
         </nav>
     </div>
 
-    <div id="content">
+    <div id="content" style="padding-top: 80px; margin: 0px auto; width:600; height:600;">
 
-        Welcome
+
+        <canvas id="myChart" width="600" height="600"></canvas>
 
     </div>
 </div>
