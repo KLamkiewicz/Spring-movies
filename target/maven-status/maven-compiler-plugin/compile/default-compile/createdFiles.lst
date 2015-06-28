@@ -1,4 +1,9 @@
+pl\krzysiek\util\GenreRowMapper.class
+pl\krzysiek\util\MovieRowMapper.class
+pl\krzysiek\service\MovieServiceImpl.class
 pl\krzysiek\service\MovieService.class
 pl\krzysiek\dao\MoviesDAO.class
+pl\krzysiek\model\Movie.class
 pl\krzysiek\controller\HomeController.class
 pl\krzysiek\dao\MoviesDAOImpl.class
+pl\krzysiek\model\Genre.class

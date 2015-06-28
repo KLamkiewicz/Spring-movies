@@ -90,8 +90,8 @@
       <file leaf-file-name="MoviesDAOImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/krzysiek/dao/MoviesDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34254143" vertical-offset="511" max-vertical-offset="1173">
-              <caret line="41" column="149" selection-start-line="41" selection-start-column="149" selection-end-line="41" selection-end-column="149" />
+            <state vertical-scroll-proportion="0.8434622" vertical-offset="511" max-vertical-offset="1173">
+              <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1435416245102" expanded="true" signature="742:815" placeholder="SELECT * FRO..movie..." />
@@ -1058,16 +1058,16 @@
       <workItem from="1435305467139" duration="8735000" />
       <workItem from="1435339587214" duration="2183000" />
       <workItem from="1435341872401" duration="4917000" />
-      <workItem from="1435404175693" duration="32278000" />
+      <workItem from="1435404175693" duration="32365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60751000" />
+    <option name="totallyTimeSpent" value="60838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1288" height="988" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1091,7 +1091,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922733" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32474804" sideWeight="0.5875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32474804" sideWeight="0.5875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1559,8 +1559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/krzysiek/dao/MoviesDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34254143" vertical-offset="511" max-vertical-offset="1173">
-          <caret line="41" column="149" selection-start-line="41" selection-start-column="149" selection-end-line="41" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.8434622" vertical-offset="511" max-vertical-offset="1173">
+          <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1435416245102" expanded="true" signature="742:815" placeholder="SELECT * FRO..movie..." />
