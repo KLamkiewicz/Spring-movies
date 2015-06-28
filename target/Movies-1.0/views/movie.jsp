@@ -44,7 +44,13 @@
 
     <div id="content">
 
-        Welcome
+        <div class="jumbotron" style="padding-left: 100px" id="movieJumb">
+            <h1></h1>
+            <h2></h2>
+            <h3></h3>
+            <p></p>
+
+        </div>
 
     </div>
 </div>
